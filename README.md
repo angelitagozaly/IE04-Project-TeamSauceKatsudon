@@ -1,7 +1,9 @@
 # Team sauce karsudon's project for IE04
-Team members
-s1280179 Tomohito Ide
+Team members:  
+s1280179 Tomohito Ide  
 s1282003 Angelita Gozaly
+
+Type of software: Web application
 
 This is the initial structure for your project.
 You may customize the structure to your liking, but there are a few rules that you **must** follow.
