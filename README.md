@@ -3,7 +3,14 @@ Team members:
 s1280179 Tomohito Ide  
 s1282003 Angelita Gozaly
 
-Type of software: Web application
+Type of software: Web application  
+  
+Language and frameworks:  
+Backend: Python (Django)  
+Frontend: HTML, CSS, JavaScript  
+  
+Plan for this week:  
+Analyze use-cases and create product backlog
 
 This is the initial structure for your project.
 You may customize the structure to your liking, but there are a few rules that you **must** follow.
