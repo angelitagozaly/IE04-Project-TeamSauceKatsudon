@@ -10,7 +10,10 @@ Backend: Python (Django)
 Frontend: HTML, CSS, JavaScript  
   
 Plan for this week:  
-Analyze use-cases and create product backlog
+- Revise product backlog  
+- Create use case diagram  
+- Create class diagram  
+- Create Hello World page  
 
 This is the initial structure for your project.
 You may customize the structure to your liking, but there are a few rules that you **must** follow.
