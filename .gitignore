@@ -23,3 +23,9 @@
 /.project
 /.settings/
 /.tern-project
+
+# Environment variables
+.env
+
+# Cache
+__pycache__/
