@@ -18,6 +18,62 @@ Plan for this week:
 This is the initial structure for your project.
 You may customize the structure to your liking, but there are a few rules that you **must** follow.
 
+## Setting up development environment
+Installing Python: [reference](https://cloudbytes.dev/snippets/upgrade-python-to-latest-version-on-ubuntu-linux)
+
+Installing MySQL: [reference](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)
+
+Installing MySQL development libraries for Python
+```
+sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
+```
+
+Creating database: 
+* Start the local MySQL server with `sudo systemctl start mysql.service`
+* Login to your root account with `mysql -u root -p`
+* From the MySQL console, create a database with `CREATE DATABASE {{DB_NAME}}`
+* Create a dedicated MySQL user and grant necessary privileges **optional*
+```
+CREATE USER '{{USERNAME}}'@'{{HOST}}' IDENTIFIED BY {{PASSWORD}};
+GRANT PRIVILEGE ON {{DB_NAME}} TO '{{USERNAME}}'@'{{HOST}}';
+```
+
+Installing Pip **if necessary*
+```
+sudo apt-get install python3-pip
+```
+
+## Installing dependencies
+Run the following command from the root directory of this repository
+```
+pip3 install -r requirements.txt
+```
+
+## Setting up Django
+Django should already be installed after the [above section](#installing-dependencies). To confirm that it has been installed properly, run the following command
+```
+python3 -m django --version
+```
+
+To manage your local database credentials, create a file named `.env` in the root directory of this project and store all related variables. Refer to the format below
+```
+DB-NAME={{LOCAL_DB_NAME}}
+DB-USER={{LOCAL_DB_USERNAME}}
+DB-PASSWORD={{LOCAL_DB_PASSWORD}}
+```
+
+After setting up your database credentials, migrate all Django models into your local database by running the following command from the `src/ta_report_system` directory
+```
+python3 manage.py makemigrations
+```
+
+Finally, you can launch your local server with
+```
+python3 manage.py runserver
+```
+
+For more details, refer to [Django official documentation](https://docs.djangoproject.com/ja/4.1/intro/)
+
 ## Project structure rule
 **Do not delete** the following directories.
 Each should contain the corresponding documents.
