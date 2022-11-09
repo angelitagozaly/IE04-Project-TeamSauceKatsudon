@@ -9,10 +9,20 @@ Language and frameworks:
 Backend: Python (Django)  
 Frontend: HTML, CSS, JavaScript  
   
-Plan for this week:  
-- Hello world  
+Plan for this week:   
 - Phase backlog  
-- Phase 1 product
+- Sequence diagram  
+- Modify admin page  
+- Create tables in database  
+  
+## External Links  
+UI Mockups:  
+Student's login-> https://ta-report-system-ce3b81.webflow.io/  
+Student's main-> https://ta-report-system-ce3b81.webflow.io/main-student/  
+Student's report-> https://ta-report-system-ce3b81.webflow.io/report-student/  
+Lecturer's login-> https://ta-report-system-ce3b81.webflow.io/login-lecturer/  
+Lecturer's main-> https://ta-report-system-ce3b81.webflow.io/main-lecturer/  
+Lecturer's report-> https://ta-report-system-ce3b81.webflow.io/report-lecturer/  
 
 This is the initial structure for your project.
 You may customize the structure to your liking, but there are a few rules that you **must** follow.
