@@ -36,36 +36,53 @@ MONTH_CHOICES = (
 )
 
 class Student(models.Model):
-    StudentID = models.CharField(max_length=20, unique=True)
+    StudentID = models.CharField("Student ID", max_length=20, unique=True)
     Name = models.CharField(max_length=100)
     Username = models.CharField(max_length=20)
     Password = models.CharField(max_length=20)
     TASA = models.CharField(max_length=2, choices=TASA_CHOICES, default="SA")
-    WorkingPermitStatus = models.CharField(max_length=20, choices=WORKING_PERMIT_STATUS_CHOICES, default="Japanese")
+    WorkingPermitStatus = models.CharField("Working Permit Status", max_length=20, choices=WORKING_PERMIT_STATUS_CHOICES, default="Japanese")
+
+    def __str__(self):
+        return self.StudentID
 
 class Lecturer(models.Model):
     Name =  models.CharField(max_length=100)
     Username = models.CharField(max_length=20)
     Password = models.CharField(max_length=20)
 
+    def __str__(self):
+        return self.Name
+
 class Course(models.Model):
-    CourseID = models.CharField(max_length=10, unique=True)
-    CourseName = models.CharField(max_length=100)
+    CourseID = models.CharField("Course ID", max_length=10, unique=True)
+    CourseName = models.CharField("Course Name", max_length=100)
+    TASA = models.ManyToManyField(Student)
+    Lecturer = models.ManyToManyField(Lecturer)
+
+    def __str__(self):
+        return self.CourseName
 
 class Report(models.Model):
-    Title = models.CharField(max_length=20)
-    StudentID = models.ForeignKey(Student, to_field='StudentID', on_delete=models.CASCADE)
-    CourseID = models.ForeignKey(Course, to_field='CourseID', on_delete=models.DO_NOTHING)
+    Title = models.CharField(max_length=100)
+    StudentID = models.ForeignKey(Student, to_field='StudentID', on_delete=models.CASCADE, verbose_name="Student ID")
+    CourseID = models.ForeignKey(Course, to_field='CourseID', on_delete=models.DO_NOTHING, verbose_name="Course ID")
     LecturerID = models.ForeignKey(Lecturer, on_delete=models.DO_NOTHING)
     Year = models.IntegerField()
-    Month = models.IntegerField(choices=MONTH_CHOICES, default="1")
-    TotalWorkingHours = models.DurationField()
+    Month = models.CharField(max_length=3, choices=MONTH_CHOICES, default="1")
+    TotalWorkingHours = models.DurationField("Total Working Hours")
+
+    def __str__(self):
+        return str(self.Title)
 
 class ReportHour(models.Model):
-    ReportID = models.ForeignKey(Report, on_delete=models.CASCADE)
+    ReportTitle = models.ForeignKey(Report, on_delete=models.CASCADE, verbose_name="Report Title")
     Date = models.DateField()
-    WorkCategory = models.IntegerField(choices=WORK_CATEGORY_CHOICES, default="1")
+    WorkCategory = models.CharField("Work Category", max_length=5, choices=WORK_CATEGORY_CHOICES, default="1")
     Start = models.TimeField()
     End = models.TimeField()
     Break = models.DurationField()
-    WorkingHours = models.DurationField()
+    WorkingHours = models.DurationField("Working Hours")
+
+    def __str__(self):
+        return str(self.ReportTitle)

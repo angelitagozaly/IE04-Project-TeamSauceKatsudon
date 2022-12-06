@@ -20,3 +20,7 @@ urlpatterns = [
     path('', include('helloworld.urls')),
     path('admin/', admin.site.urls),
 ]
+
+admin.site.site_header  =  "TA Report System Admin"  
+admin.site.site_title  =  "TA Report System Admin"
+admin.site.index_title  =  "TA Report System Admin"

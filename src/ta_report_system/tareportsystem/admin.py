@@ -3,16 +3,25 @@ from django.contrib import admin
 # Register your models here.
 
 from .models import Student
-admin.site.register(Student)
+class StudentAdmin(admin.ModelAdmin):
+    list_display = ('StudentID', 'Name', 'TASA')
+admin.site.register(Student, StudentAdmin)
 
 from .models import Lecturer
 admin.site.register(Lecturer)
 
 from .models import Course
-admin.site.register(Course)
+class CourseAdmin(admin.ModelAdmin):
+    list_display = ('CourseID', 'CourseName')
+admin.site.register(Course, CourseAdmin)
 
 from .models import Report
-admin.site.register(Report)
+class ReportAdmin(admin.ModelAdmin):
+    list_display = ('Title', 'StudentID', 'CourseID', 'Year', 'Month')
+    list_filter = ('CourseID', 'Year', 'Month')
+admin.site.register(Report, ReportAdmin)
 
 from .models import ReportHour
-admin.site.register(ReportHour)
+class ReportHourAdmin(admin.ModelAdmin):
+    list_display = ('ReportTitle', 'Date')
+admin.site.register(ReportHour, ReportHourAdmin)
