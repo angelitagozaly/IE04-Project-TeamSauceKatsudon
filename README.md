@@ -1,4 +1,4 @@
-# Team sauce karsudon's project for IE04
+# Team sauce katsudon's project for IE04
 Team members:  
 s1280179 Tomohito Ide  
 s1282003 Angelita Gozaly
