@@ -10,10 +10,8 @@ Backend: Python (Django)
 Frontend: HTML, CSS, JavaScript  
   
 Plan for this week:   
-- Phase backlog  
-- Sequence diagram  
-- Modify admin page  
-- Create tables in database  
+- Revise diagrams
+- Create views
   
 ## External Links  
 UI Mockups:  
