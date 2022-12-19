@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django import forms
 
 # Register your models here.
 
@@ -25,3 +26,8 @@ from .models import ReportHour
 class ReportHourAdmin(admin.ModelAdmin):
     list_display = ('ReportTitle', 'Date')
 admin.site.register(ReportHour, ReportHourAdmin)
+
+# Change time format
+#class timeFormat(forms.Form):
+#    from_time = forms.TimeField(widget=forms.TimeInput(format='%H:%M'))
+#admin.site.register(timeFormat)

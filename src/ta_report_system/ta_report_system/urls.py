@@ -19,6 +19,7 @@ from django.urls import include, path
 urlpatterns = [
     path('', include('helloworld.urls')),
     path('admin/', admin.site.urls),
+    path('tareportsystem/', include('tareportsystem.urls')),
 ]
 
 admin.site.site_header  =  "TA Report System Admin"  
