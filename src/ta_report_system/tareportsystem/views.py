@@ -7,3 +7,7 @@ from django.http import HttpResponse
 def studentlogin(request):
     template = loader.get_template('tareportsystem/studentlogin.html')
     return HttpResponse(template.render())
+
+def studentmain(request):
+    template = loader.get_template('tareportsystem/studentmain.html')
+    return HttpResponse(template.render())

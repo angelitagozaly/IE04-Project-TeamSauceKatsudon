@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include('helloworld.urls')),
     path('admin/', admin.site.urls),
     path('tareportsystem/', include('tareportsystem.urls')),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 admin.site.site_header  =  "TA Report System Admin"  
 admin.site.site_title  =  "TA Report System Admin"
