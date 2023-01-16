@@ -10,8 +10,8 @@ Backend: Python (Django)
 Frontend: HTML, CSS, JavaScript  
   
 Plan for this week:   
-- Revise diagrams
-- Create views
+- Work on working hours input
+- Review diagrams and backlogs
   
 ## External Links  
 UI Mockups:  
