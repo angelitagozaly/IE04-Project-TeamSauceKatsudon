@@ -35,9 +35,11 @@
       <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div></div>
     </div>
     <div class="wf-section">
+      {% if lecturer_course_list %}
+      {% for course in lecturer_course_list %}
       <div class="container-2 w-container">
         <div>
-          <h2 class="heading-6">IE04 Integrated Exercise for Software II</h2>
+          <h2 class="heading-6">{{course.CourseID}} {{course.CourseName}} {{course.TASA}}</h2>
         </div>
         <div class="div-block-16">
           <div>
@@ -57,7 +59,7 @@
                 <div style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="collapsible-icon-3 w-icon-dropdown-toggle" aria-hidden="true"></div>
                 <div class="text-block-2">Aizu Taro</div>
               </div>
-              <nav class="dropdown-list-2 w-dropdown-list" id="w-dropdown-list-0" aria-labelledby="w-dropdown-toggle-0"><a href="https://ta-report-system-ce3b81.webflow.io/main-lecturer#" class="w-dropdown-link" tabindex="0">Report 1</a><a href="https://ta-report-system-ce3b81.webflow.io/main-lecturer#" class="w-dropdown-link" tabindex="0">Report 2</a><a href="https://ta-report-system-ce3b81.webflow.io/main-lecturer#" class="w-dropdown-link" tabindex="0">Report 3</a></nav>
+              <nav class="dropdown-list-2 w-dropdown-list" id="w-dropdown-list-0" aria-labelledby="w-dropdown-toggle-0"><a href="http://127.0.0.1:8000/tareportsystem/student-calendar" class="w-dropdown-link" tabindex="0">Report 1</a><a href="http://127.0.0.1:8000/tareportsystem/student-calendar" class="w-dropdown-link" tabindex="0">Report 2</a><a href="http://127.0.0.1:8000/tareportsystem/student-calendar" class="w-dropdown-link" tabindex="0">Report 3</a></nav>
             </div>
           </div>
           <div>
@@ -77,11 +79,15 @@
                 <div style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="collapsible-icon-3 w-icon-dropdown-toggle" aria-hidden="true"></div>
                 <div class="text-block-2">Aizu Jiro</div>
               </div>
-              <nav class="dropdown-list-2 w-dropdown-list" id="w-dropdown-list-1" aria-labelledby="w-dropdown-toggle-1"><a href="https://ta-report-system-ce3b81.webflow.io/main-lecturer#" class="w-dropdown-link" tabindex="0">Report 1</a><a href="https://ta-report-system-ce3b81.webflow.io/main-lecturer#" class="w-dropdown-link" tabindex="0">Report 2</a><a href="https://ta-report-system-ce3b81.webflow.io/main-lecturer#" class="w-dropdown-link" tabindex="0">Report 3</a></nav>
+              <nav class="dropdown-list-2 w-dropdown-list" id="w-dropdown-list-1" aria-labelledby="w-dropdown-toggle-1"><a href="http://127.0.0.1:8000/tareportsystem/student-calendar`" class="w-dropdown-link" tabindex="0">Report 1</a><a href="http://127.0.0.1:8000/tareportsystem/student-calendar" class="w-dropdown-link" tabindex="0">Report 2</a><a href="http://127.0.0.1:8000/tareportsystem/student-calendar" class="w-dropdown-link" tabindex="0">Report 3</a></nav>
             </div>
           </div>
         </div>
       </div>
+      {% endfor %}
+    {% else %}
+      <p>No course</p>
+    {% endif %}
     </div>
     <section class="footer-dark wf-section">
       <div class="container"></div>

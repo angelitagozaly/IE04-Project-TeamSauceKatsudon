@@ -79,8 +79,8 @@ class ReportHour(models.Model):
     ReportTitle = models.ForeignKey(Report, on_delete=models.CASCADE, verbose_name="Report Title")
     Date = models.DateField()
     WorkCategory = models.CharField("Work Category", max_length=5, choices=WORK_CATEGORY_CHOICES, default="1")
-    Start = models.TimeField()
-    End = models.TimeField()
+    Start = models.DateTimeField()
+    End = models.DateTimeField()
     Break = models.DurationField()
     WorkingHours = models.DurationField("Working Hours")
 

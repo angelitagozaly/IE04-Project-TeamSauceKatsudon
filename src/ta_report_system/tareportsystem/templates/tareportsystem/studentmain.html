@@ -35,6 +35,8 @@
       <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div></div>
     </div>
     <div class="wf-section">
+      {% if student_course_list %}
+      {% for course in student_course_list %}
       <div class="w-container">
         <div class="div-block-10"><a href="http://127.0.0.1:8000/tareportsystem/student-calendar" class="button w-button">New Report</a>
           <div class="text-block-3">Allocated Hours</div>
@@ -52,35 +54,16 @@
           <div class="collapsible-toggle w-dropdown-toggle" id="w-dropdown-toggle-0" aria-controls="w-dropdown-list-0" aria-haspopup="menu" aria-expanded="false" role="button" tabindex="0">
             <div style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="collapsible-icon w-icon-dropdown-toggle" aria-hidden="true"></div>
             <div class="div-block-9">
-              <div class="text-block-2">IE04 Integrated Exercise for Software II</div>
+              <div class="text-block-2">{{ course.CourseID }} {{course.CourseName }}</div>
             </div>
           </div>
           <nav class="dropdown-list w-dropdown-list" id="w-dropdown-list-0" aria-labelledby="w-dropdown-toggle-0"><a href="http://127.0.0.1:8000/tareportsystem/student-calendar" class="w-dropdown-link" tabindex="0">Report 1</a><a href="http://127.0.0.1:8000/tareportsystem/student-calendar" class="w-dropdown-link" tabindex="0">Report 2</a><a href="http://127.0.0.1:8000/tareportsystem/student-calendar" class="w-dropdown-link" tabindex="0">Report 3</a></nav>
         </div>
       </div>
-      <div class="w-container">
-        <div class="div-block-10"><a href="http://127.0.0.1:8000/tareportsystem/student-calendar" class="button w-button">New Report</a>
-          <div class="text-block-3">Allocated Hours</div>
-          <div class="form-block-2 w-form">
-            <form id="email-form" name="email-form" data-name="Email Form" method="get" aria-label="Email Form"><input type="number" class="text-field w-input" maxlength="256" name="hours-2" data-name="Hours 2" placeholder="" id="hours-2"></form>
-            <div class="w-form-done" tabindex="-1" role="region" aria-label="Email Form success">
-              <div>Thank you! Your submission has been received!</div>
-            </div>
-            <div class="w-form-fail" tabindex="-1" role="region" aria-label="Email Form failure">
-              <div>Oops! Something went wrong while submitting the form.</div>
-            </div>
-          </div>
-        </div>
-        <div data-hover="false" data-delay="0" data-w-id="a46cfdae-36cb-a036-e1ba-a015b85fa01d" style="height: 70px;" class="collapsible w-dropdown">
-          <div class="collapsible-toggle w-dropdown-toggle" id="w-dropdown-toggle-1" aria-controls="w-dropdown-list-1" aria-haspopup="menu" aria-expanded="false" role="button" tabindex="0">
-            <div style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="collapsible-icon w-icon-dropdown-toggle" aria-hidden="true"></div>
-            <div class="div-block-9">
-              <div class="text-block-2">IT01 Artificial Intelligence</div>
-            </div>
-          </div>
-          <nav class="dropdown-list w-dropdown-list" id="w-dropdown-list-1" aria-labelledby="w-dropdown-toggle-1"><a href="http://127.0.0.1:8000/tareportsystem/student-calendar" class="w-dropdown-link" tabindex="0">Report 1</a><a href="http://127.0.0.1:8000/tareportsystem/student-calendar" class="w-dropdown-link" tabindex="0">Report 2</a><a href="http://127.0.0.1:8000/tareportsystem/student-calendar" class="w-dropdown-link" tabindex="0">Report 3</a></nav>
-        </div>
-      </div>
+      {% endfor %}
+    {% else %}
+      <p>No course</p>
+    {% endif %}
     </div>
     <section class="footer-dark wf-section">
       <div class="container"></div>
