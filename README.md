@@ -1,4 +1,7 @@
 # Team sauce katsudon's project for IE04
+University of Aizu.  
+IE04 Integrated Exercise for Software II Course.  
+
 Team members:  
 s1280179 Tomohito Ide  
 s1282003 Angelita Gozaly
