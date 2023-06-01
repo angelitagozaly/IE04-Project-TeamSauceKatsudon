@@ -12,10 +12,6 @@ Language and frameworks:
 Backend: Python (Django)  
 Frontend: HTML, CSS, JavaScript  
   
-Plan for this week:   
-- Work on working hours input
-- Review diagrams and backlogs
-  
 ## External Links  
 UI Mockups:  
 Student's login-> https://ta-report-system-ce3b81.webflow.io/  
